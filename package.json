@@ -1,0 +1,25 @@
+{
+  "name": "coding-battle-01",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/we-studio/coding-battle-01.git"
+  },
+  "keywords": [
+    "coding",
+    "battle",
+    "hacke",
+    "league"
+  ],
+  "author": "Philos.io, Westud.io, Wemanity.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/we-studio/coding-battle-01/issues"
+  },
+  "homepage": "https://github.com/we-studio/coding-battle-01#readme"
+}
