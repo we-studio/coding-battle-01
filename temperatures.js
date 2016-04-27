@@ -4,11 +4,15 @@
  * @temperatyres: parameter is an array
  */
 function getHighestAndLowest(temperatures) {
-    // Your code here
-    var lowestTemp = temperatures[0];
-    var highestTemp = temperatures[temperatures.length - 1];
 
-    return formatMyResult(lowestTemp.value, highestTemp.value);
+    var map = temperatures.map(function(o){
+        return o.value;
+    });
+
+    var max = Math.max.apply(Math, map);
+    var min = Math.min.apply(Math, map);
+
+    return formatMyResult(min, max);
 }
 
 /** DO NOT TOUCH THIS */
