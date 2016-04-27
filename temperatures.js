@@ -4,9 +4,22 @@
  * @temperatyres: parameter is an array
  */
 function getHighestAndLowest(temperatures) {
-    // Your code here
-    var lowestTemp = temperatures[0];
-    var highestTemp = temperatures[temperatures.length - 1];
+    var min, max;
+
+    temperatures.forEach(function(temperature) {
+        if (!min) {
+            min = temperature.value;
+            max = temperature.value;
+        }
+
+        if (temperature.value < min) {
+            min = temperature.value;
+        }
+
+        if (temperature.value > max) {
+            max = temperature.value;
+        }
+    });
 
     return formatMyResult(lowestTemp.value, highestTemp.value);
 }
@@ -25,7 +38,7 @@ request({
 }, function (error, response, body) {
 
     if (!error && response.statusCode === 200) {
-        console.time('temperatures'); 
+        console.time('temperatures');
         var result = getHighestAndLowest(response.body);
         console.timeEnd('temperatures');
         console.log('Result: ' + result);
