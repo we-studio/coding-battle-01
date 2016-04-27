@@ -5,10 +5,19 @@
  */
 function getHighestAndLowest(temperatures) {
     // Your code here
-    var lowestTemp = temperatures[0];
-    var highestTemp = temperatures[temperatures.length - 1];
+    var first = temperatures[0];
+    const extremes = temperatures.reduce((accu, temp) => {
+        const value = temp.value;
+        if(accu.min > value) {
+            accu.min = value;
+        }
+        if(accu.max < value) {
+            accu.max = value;
+        }
+        return accu;
+    }, {min: first.value, max: first.value});
 
-    return formatMyResult(lowestTemp.value, highestTemp.value);
+    return formatMyResult(extremes.min, extremes.max);
 }
 
 /** DO NOT TOUCH THIS */
