@@ -11,9 +11,10 @@ function getHighestAndLowest(temperatures) {
         if(accu.min > value) {
             accu.min = value;
         }
-        if(accu.max < value) {
+        else if(accu.max < value) {
             accu.max = value;
         }
+
         return accu;
     }, {min: first.value, max: first.value});
 
