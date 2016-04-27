@@ -6,7 +6,11 @@
 function getHighestAndLowest(temperatures) {
     // Your code here
     var lowestTemp = temperatures[0];
-    var highestTemp = temperatures[temperatures.length - 1];
+    var highestTemp = temperatures[0];
+    for (var i = 1; i < temperatures.length; i++) {
+      if (temperatures[i].value < lowestTemp) lowestTemp = temperatures[i];
+      if (temperatures[i].value > highestTemp) highestTemp = temperatures[i];
+    }
 
     return formatMyResult(lowestTemp.value, highestTemp.value);
 }
@@ -25,9 +29,9 @@ request({
 }, function (error, response, body) {
 
     if (!error && response.statusCode === 200) {
-        console.time('temperatures'); 
+        console.time('temperatures');
         var result = getHighestAndLowest(response.body);
         console.timeEnd('temperatures');
         console.log('Result: ' + result);
     }
-})
+});
