@@ -1,34 +1,20 @@
-
 /**
  * getHighestAndLowest: find the highest and lowest temperature from these thousands values
  * @temperatyres: parameter is an array
  */
 function getHighestAndLowest(temperatures) {
+
     // Your code here
-    var lowestTemp = temperatures[0];
-    var highestTemp = temperatures[temperatures.length - 1];
+    var lowestTemp = temperatures.reduce(function(current, next) {
+        return (current !== undefined && current.value < next.value) ? current:next
+    }, undefined);
+    //var lowestTemp = temperatures[0];
+    var highestTemp = temperatures.reduce(function(current, next) {
+        return (current !== undefined && current.value > next.value) ? current:next
+    }, undefined);
+    //var highestTemp = temperatures[temperatures.length - 1];
 
-
-
-    p = temperatures;
-
-    Array.prototype.max = function() {
-      return Math.max.apply(null, this);
-    };
-
-    Array.prototype.min = function() {
-      return Math.min.apply(null, this);
-    };
-
-temperatures.values
-
-temperatures.forEach(function(item)) {
-  tab.push(item.value);
-}
-
-
-
-    return formatMyResult(tab.min, tab.max);
+    return formatMyResult(lowestTemp.value, highestTemp.value);
 }
 
 /** DO NOT TOUCH THIS */
