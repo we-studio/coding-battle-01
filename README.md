@@ -1,2 +1,11 @@
-# coding-battle-01
-#hack-league #coding-battle
+# Coding Battle 01
+
+# Challenge 07: temperatures
+
+- `npm install`
+- `npm run-script temperatures`
+
+# FINALE: prices
+
+- `npm install`
+- `npm run-script prices`
