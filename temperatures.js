@@ -6,7 +6,12 @@
 function getHighestAndLowest(temperatures) {
     // Your code here
     var lowestTemp = temperatures[0];
-    var highestTemp = temperatures[temperatures.length - 1];
+    var highestTemp = temperatures[0];
+
+    for (var i = 1; i < temperatures.length; i++) {
+        lowestTemp = lowestTemp.value > temperatures[i].value && temperatures[i] || lowestTemp;
+        highestTemp = highestTemp.value < temperatures[i].value && temperatures[i] || highestTemp;
+    }
 
     return formatMyResult(lowestTemp.value, highestTemp.value);
 }
