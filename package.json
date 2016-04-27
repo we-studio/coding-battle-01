@@ -2,9 +2,9 @@
   "name": "coding-battle-01",
   "version": "1.0.0",
   "description": "",
-  "main": "finale.js",
   "scripts": {
-    "start": "node finale.js"
+    "lowest-price": "node lowest-price.js",
+    "temperatures": "node temperatures.js"
   },
   "repository": {
     "type": "git",
