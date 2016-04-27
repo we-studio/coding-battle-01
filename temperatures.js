@@ -3,12 +3,15 @@
  * getHighestAndLowest: find the highest and lowest temperature from these thousands values
  * @temperatyres: parameter is an array
  */
-function getHighestAndLowest(temperatures) {
-    // Your code here
-    var lowestTemp = temperatures[0];
-    var highestTemp = temperatures[temperatures.length - 1];
+function getHighestAndLowest(data) {
+    var min = Infinity, max = 0;
+    data.forEach(function(x) {
+        var value = x.value;
+        if(min > value) min = value;
+        else if (max < value) max = value;
+    });
 
-    return formatMyResult(lowestTemp.value, highestTemp.value);
+    return formatMyResult(min, max);
 }
 
 /** DO NOT TOUCH THIS */
