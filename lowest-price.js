@@ -1,4 +1,10 @@
-function getMeTheLowestPrice(clubs) {
+/** FINAL CHALLENGE **/
+
+/**
+ * getLowestPrice: using `formatMyResult() function`, find the lowest price in all these clubs
+ * clubs param is an array of objects
+ */
+function getLowestPrice(clubs) {
     // Your code here
     var lowestClub = clubs[0];
     var lowestSeason = lowestClub.seasons[0];
@@ -21,7 +27,7 @@ request({
 
     if (!error && response.statusCode === 200) {
         console.time('getMeTheLowestPrice'); 
-        var result = getMeTheLowestPrice(response.body);
+        var result = getLowestPrice(response.body);
         console.timeEnd('getMeTheLowestPrice');
         console.log('Result: ' + result);
     }
