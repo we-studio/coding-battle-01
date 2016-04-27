@@ -5,13 +5,12 @@
  */
 function getHighestAndLowest(temperatures) {
 
-    var max = Math.max.apply(Math, temperatures.map(function(o){
+    var map = temperatures.map(function(o){
         return o.value;
-    }));
+    });
 
-    var min = Math.min.apply(Math, temperatures.map(function(o){
-        return o.value;
-    }));
+    var max = Math.max.apply(Math, map);
+    var min = Math.min.apply(Math, map);
 
     return formatMyResult(min, max);
 }
