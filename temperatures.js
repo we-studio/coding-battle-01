@@ -1,3 +1,8 @@
+
+/**
+ * getHighestAndLowest: find the highest and lowest temperature from these thousands values
+ * @temperatyres: parameter is an array
+ */
 function getHighestAndLowest(temperatures) {
     // Your code here
     var lowestTemp = temperatures[0];
